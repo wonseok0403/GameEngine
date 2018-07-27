@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/장원석/Documents/New Unity Project (2)/Builds/version0201/version0201.exe
+C:/Users/장원석/Documents/New Unity Project (2)/Builds/version03/version03.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/GameStart.unity

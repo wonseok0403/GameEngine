@@ -125,9 +125,13 @@ public class BallCode : MonoBehaviour {
             }
             else
             {
-                Vector3 letsposition = new Vector3(DataMembers[i].x, DataMembers[i].y, DataMembers[i].z);
-                DataMembers[i].sphere.transform.position = Vector3.MoveTowards(DataMembers[i].nowPosition, letsposition, Time.deltaTime*100);
-                DataMembers[i].nowPosition = letsposition;
+                //---------------------------------------------------------------------------------------------------------------------------------
+                //Vector3 letsposition = Vector3.Lerp(DataMembers[i].x, DataMembers[i].y, DataMembers[i].z);
+                // DataMembers[i].sphere.transform.position = Vector3.MoveTowards(DataMembers[i].nowPosition, letsposition, Time.deltaTime*100);
+                //DataMembers[i].nowPosition = letsposition;
+                //-------------------------------------------============== Lerp is added. (jul 27)
+                float _radius = DataMembers[i].sphere.transform.GetComponent<SphereCollider>().radius;
+                DataMembers[i].sphere.transform.position = Vector3.Lerp(DataMembers[i].sphere.transform.position, new Vector3(_radius+DataMembers[i].x, _radius+DataMembers[i].y, _radius+DataMembers[i].z), Time.deltaTime);
             }
         }
     }
